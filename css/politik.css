@@ -133,6 +133,7 @@ form.searching::after {
 	display: grid;
 	grid-column: 3;
 	grid-row: 2;
+	background-color: #F1EFEF;
 }
 
 #main_leftcol {
