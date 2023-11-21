@@ -170,6 +170,16 @@ form.searching::after {
   color: #000;
 }
 
+.main-news h3 {
+  font-size: 20px;
+  color: #000;
+}
+
+.main-news h4 {
+  font-size: 20px;
+  color: #000;
+}
+
 .news-title h1 {
   color: #000;
   font-size: 40px;
