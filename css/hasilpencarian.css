@@ -176,9 +176,17 @@ form.searching::after {
   line-height: 3.5vw;
 }
 
-.main-news img {
-  width: auto;
-  height: auto;
+.gambar-kecil {
+  width: 150px; /* Atur lebar gambar sesuai kebutuhan */
+  height: 150px; /* Biarkan tinggi otomatis agar tidak terdistorsi */
+  float: left; /* Mengatur gambar agar mengapung ke kiri */
+  margin-right: 20px; /* Memberikan margin kanan agar terdapat ruang antara gambar dan teks */
+  margin-bottom: 50px;
+}
+
+.text {
+  line-height: 4vw;
+  text-align: left;
 }
 
 #caption p {
