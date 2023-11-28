@@ -4,10 +4,11 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>BeritaKita.com</title>
-        <link rel="stylesheet" href="css/ourteam.css">
+        <link rel="stylesheet" href="css/feedback.css">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+        />
     </head>
     <body>
         <header>
@@ -20,7 +21,7 @@
                     <form class="searching" action="hasil_pencarian_page.html" style="margin:auto;max-width:300px" method="GET">
                         <div style="display: flex;">
                             <input type="text" placeholder="Search.." name="search">
-                            <button type="submit"><i class="fa fa-search"></i></button>
+                            <button type="submit" style="height: fit-content; margin-top: 8px;"><i class="fa fa-search"></i></button>
                         </div>
                     </form>
                 </div>
@@ -30,44 +31,45 @@
                     <li><a href="index.html">Berita Harian</a></li>
                     <li><a href="olahraga_page.html">Olahraga</a></li>
                     <li><a href="politik_page.html">Politik</a></li>
-                    <li><a href="teknologi_page.html">Teknologi</a></li> 
-                    <li><a href="feedback_page.html">Feedback</a></li>     
-                    <li><a href="ourteam_page.html" class="current">Our Team</a></li> 
+                    <li><a href="teknologi_page.html">Teknologi</a></li>  
+                    <li><a href="feedback_page.html" class="current">Feedback</a></li>  
+                    <li><a href="ourteam_page.html">Our Team</a></li> 
                 </ul>
             </div>
         </div>
         </header>
-
-        <div class="grid-container">
-            <div class="member1">
-                <img src="images/ourteam/putri n.jpg" alt="member1">
-                <p>PL - Putri Nurhayati Hutapea</p>
+        
+        <main>
+            <div class="container">
+                <div class="card-container">
+                    <div class="left">
+                        <div class="left-container">
+                            <h2>BeritaKita.com</h2>
+                            <p>BeritaKita.com adalah sebuah portal berita seputar 
+                                informasi terkini dari dalam dan luar negeri terkait 
+                                olahraga, politik, dan teknologi. <br>
+                                Portal berita ini merupakan <strong>Capstone Project Software Engineering</strong>
+                                dari <strong>Studi Independen - RevoU Batch 'AUG 2023 </strong></p>
+                            <br>
+                            <p>Bantu beri masukan kepada kami</p>
+                            </div>
+                    </div>
+                    <div class="right">
+                        <div class="right-container">
+                            <form class="feedback" action="">
+                                <h2 class="lg-view">Feedback</h2>
+                                <h2 class="sm-view">Feedback</h2>
+                                <input type="text" placeholder="Nama">
+                                <input type="text" placeholder="Email">
+                                <input type="text" placeholder="Telepon">
+                                <textarea name="feedback" id="feedback" rows="10" placeholder="Masukan"></textarea>
+                                <button id="send">Kirim</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="member2">
-                <img src="images/ourteam/alvin.jpg" alt="member2">
-                <p>FE - Alvin Mumtaz</p>
-            </div>
-            <div class="member3">
-                <img src="images/ourteam/indah.jpg" alt="member2">
-                <p>FE - Indah Rahayuningtias</p>
-            </div>
-            <div class="member4">
-                <img src="images/ourteam/julia.jpg" alt="member2">
-                <p>BE - Julia Agustin</p>
-            </div>
-            <div class="member5">
-                <img src="images/ourteam/lita.jpg" alt="member2">
-                <p>BE - Lita Widiastuti</p>
-            </div>
-            <div class="member6">
-                <img src="images/ourteam/iman.jpg" alt="member2">
-                <p>QA - Iman Azhari</p>
-            </div>
-            <div class="member7">
-                <img src="images/ourteam/putri f.jpg" alt="member2">
-                <p>QA - Putri Fitratunnisah</p>
-            </div>
-        </div>
+        </main>
 
         <footer>
             <div id="footer-container">
@@ -88,6 +90,7 @@
                         <a href="olahraga_page.html">Olahraga</a><br>
                         <a href="politik_page.html">Politik</a><br>
                         <a href="teknologi_page.html">Teknologi</a><br>
+                        <a href="feedback_page.html">Feedback</a><br>
                         <a href="ourteam_page.html">Our Team</a><br>
                     </div>
                 </div>
