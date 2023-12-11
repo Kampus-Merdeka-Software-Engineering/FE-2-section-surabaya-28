@@ -1,51 +1,25 @@
-  // Navbar active link
-  const currentUrl = window.location.href;
-  const navLinks = document.querySelectorAll(".nav-link");
-  
-  navLinks.forEach((link) => {
-      const linkUrl = link.href;
-  
-      if (currentUrl.includes(linkUrl)) {
-          link.classList.add("active");
-      }
-  });
-  
-  // CONNECT TO BACKEND SERVER
-  const API_URL = "http://localhost:3000";
-  
-  async function getTopNews() {
-      try {
-          const response = await fetch(`${API_URL}/index.html`);
-          const news = await response.json();
-          const beritaHarian = document.getElementById("main_leftcol");
-          news.forEach((berita) => {
-          const newBerita = document.createElement("div");
-          newBerita.innerHTML = 
-              <div className="main-news" >
-                  <h2>BeritaKita.com / ${berita.category}</h2>
-                  <div class="news-title">
-                      <h1>${berita.news_title}</h1>
-                  </div>
-                  <div class="news-date"><strong>BeritaKita.com </strong>- ${berita.news_date}</div>
-                  <img src="${berita.news_image}" alt="image" />
-                  <div id="caption">
-                      <p>${berita.news_caption}</p>
-                  </div>
-                  <p>
-                      <strong>BeritaKita.com</strong> - ${berita.news_content}
-                  </p>
-              </div>;
-  
-              newBerita.classList.add("main-news");
-              beritaHarian.appendChild(newBerita);
-          });
-      } catch (error) {
-          console.log("404");
-    }
-  }
-  
-  getTopNews();
-  
-  
-  
-  
+const API_URL = "https://be-2-section-surabaya-28-production.up.railway.app";
+
+            async function fetchNewsDetail() {
+            try {
+                const urlParams = new URLSearchParams(window.location.search);
+                const newsId = urlParams.get('id');
+                const response = await fetch(`${API_URL}/news/${newsId}`);
+                const newsDetail = await response.json();
+
+                document.getElementById("detail_title").innerText = newsDetail.news_title;
+                document.getElementById("detail_title").style.paddingRight = '10px';
+                document.getElementById("detail_date").innerText = `BeritaKita.com - ${newsDetail.news_date}`;
+                document.getElementById("detail_image").src = newsDetail.news_image;
+                document.getElementById("detail_image").style.height = '600px';
+                document.getElementById("detail_image").style.width = '97%';
+                document.getElementById("caption").innerHTML = `<p>${newsDetail.news_caption}</p>`;
+                document.getElementById("detail_content").innerText = newsDetail.news_content;
+                document.getElementById("detail_content").style.paddingRight = '30px';
+            } catch (error) {
+                console.log("Error fetching news detail:", error);
+            }
+        }
+
+        // Call the fetchNewsDetail function when the page loads
+        window.onload = fetchNewsDetail;

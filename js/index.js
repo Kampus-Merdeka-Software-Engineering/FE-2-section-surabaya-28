@@ -1,5 +1,4 @@
 // CONNECT TO BACKEND SERVER
-const news_category = "beritaharian";
 const API_URL = "https://be-2-section-surabaya-28-production.up.railway.app";
 
 async function getNews() {
@@ -11,7 +10,10 @@ async function getNews() {
     // Clear existing content
     beritaHarian.innerHTML = "";
 
-    news.forEach((berita) => {
+    // Filter news with ID between 1 and 13
+    const filteredNews = news.filter(berita => berita.news_id >= 1 && berita.news_id <=9);
+
+    filteredNews.forEach((berita) => {
       const newBerita = document.createElement("div");
 
       // Limit the body content to 100 characters
@@ -23,7 +25,6 @@ async function getNews() {
       newBerita.innerHTML = `
             <div id="top-news">
                 <img src="${berita.news_image}" alt="image" />
-                <div class="news-date">${berita.news_date}</div>
                 <h1>${berita.news_title}</h1>
                 <p>
                     ${limitedContent}

@@ -5,13 +5,13 @@ async function getNews() {
   try {
     const response = await fetch(`${API_URL}/news`);
     const news = await response.json();
-    const olahraga = document.getElementById("main_leftcol");
+    const politik = document.getElementById("main_leftcol");
 
     // Clear existing content
-    olahraga.innerHTML = "";
+    politik.innerHTML = "";
 
     // Filter news with ID between 1 and 13
-    const filteredNews = news.filter(berita => berita.news_id >= 16 && berita.news_id <=24);
+    const filteredNews = news.filter(berita => berita.news_id >= 31 && berita.news_id <=39);
 
     filteredNews.forEach((berita) => {
       const newBerita = document.createElement("div");
@@ -34,7 +34,7 @@ async function getNews() {
         `;
 
       newBerita.classList.add("leftcol_subcol");
-      olahraga.appendChild(newBerita);
+      politik.appendChild(newBerita);
     });
   } catch (error) {
     console.log("Error fetching news:", error);

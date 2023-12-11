@@ -56,14 +56,14 @@
                     </div>
                     <div class="right">
                         <div class="right-container">
-                            <form class="feedback" action="POST">
+                            <form class="feedback">
                                 <h2 class="lg-view">Feedback</h2>
                                 <h2 class="sm-view">Feedback</h2>
-                                <input type="text" placeholder="Nama">
-                                <input type="text" placeholder="Email">
-                                <input type="text" placeholder="Telepon">
-                                <textarea name="feedback" id="feedback" rows="10" placeholder="Masukan"></textarea>
-                                <button id="send">Kirim</button>
+                                <input type="text" id="nama" name="nama" placeholder="Nama">
+                                <input type="text" id="email" name="email"placeholder="Email">
+                                <input type="text" id="telepon" name="telepon"placeholder="Telepon">
+                                <textarea name="feedback" id="feedback" name="feedback" rows="10" placeholder="Masukan"></textarea>
+                                <button id="send" onclick="submitFeedback()">Kirim</button>
                             </form>
                         </div>
                     </div>
@@ -108,6 +108,27 @@
         </footer>
 
         <script src="js/feedback.js"></script>
+        <script>
+            // Function to be called when the submit button is clicked
+            function submitFeedback() {
+                // Retrieve form data
+                const nama = document.getElementById('nama').value;
+                const email = document.getElementById('email').value;
+                const telepon = document.getElementById('telepon').value;
+                const masukan = document.getElementById('feedback').value;
+    
+                // Create feedback data object
+                const feedbackData = {
+                    nama: nama,
+                    email: email,
+                    telepon: telepon,
+                    masukan: masukan,
+                };
+    
+                // Call the postFeedback function from the separate JavaScript file
+                postFeedback(feedbackData);
+            }
+        </script>
 
     </body>
 </html>
