@@ -124,7 +124,8 @@ form.searching::after {
 	border-right: 1px solid #000;
 }
 
-#menu li a:hover, #menu li .current{
+#menu li a:hover,
+#menu li .current{
 	color: #FFFFFF;
 }
 

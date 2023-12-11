@@ -168,7 +168,7 @@ form.searching::after {
   margin-left: -15px;
 }
 
-.news-date {
+#news-date {
   font-style: italic;
   font-size: 12px;
 }
